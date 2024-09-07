@@ -1,31 +1,35 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
+import qr from '@/public/qr.png'
+import Image from 'next/image'
 export default function AlternativeHero() {
     return (
-        <div className=" h-full w-full relative flex flex-col p-12 overflow-hidden">
-            <div className=" top-12 left-12 fixed">
+        <div className=" h-full container mx-auto relative flex flex-col overflow-hidden ">
+            <div className=" md:top-20 top-8 md:left-16  left-6 fixed">
                 <p>HOME</p>
             </div>
-            <div className=" top-12 right-12 fixed">
-                <p>HOME</p>
+            <div className=" md:top-20 top-2 md:right-20 right-2 fixed">
+                <Image src={qr} alt='qr' className='w-[70px] aspect-square' />
             </div>
 
-            <div className="flex sm:flex-row flex-col top-24 relative justify-between sm:p-12 p-0">
-                <div className="sm:text-7xl text-4xl m" id="list">
-                    <ul className="font-extrabold w-full flex flex-col gap-4 ">
+            <div className="flex md:flex-row flex-col top-32 relative  sm:p-6 p-3">
+                <motion.div animate={{ x: 0, }} initial={{ x: -100 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="sm:text-7xl text-4xl w-full overflow-hidden " id="list">
+                    <ul className="font-extrabold   flex flex-col">
                         <motion.li
                             initial={{ width: 'fit-content' }}
-                            whileHover={{ scale: 1.02, width: '100%', background: 'red', color: 'white' }}
+                            whileHover={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
+                            whileTap={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
                             transition={{ duration: 0.3 }} // Adjust duration for smoother effect
                             className="text-black  bg-white cursor-pointer"
+                            onClick={() => { console.log('logeged') }}
                         >
                             WORK
                         </motion.li>
                         <motion.li
                             initial={{ width: 'fit-content' }}
-                            whileHover={{ scale: 1.02, width: '100%', background: 'red', color: 'white' }}
+                            whileHover={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
+                            whileTap={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
                             transition={{ duration: 0.3 }} // Adjust duration for smoother effect
                             className="text-black  bg-white cursor-pointer"
                         >
@@ -33,7 +37,8 @@ export default function AlternativeHero() {
                         </motion.li>
                         <motion.li
                             initial={{ width: 'fit-content' }}
-                            whileHover={{ scale: 1.02, width: '100%', background: 'red', color: 'white' }}
+                            whileHover={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
+                            whileTap={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
                             transition={{ duration: 0.3 }} // Adjust duration for smoother effect
                             className="text-black  bg-white cursor-pointer"
                         >
@@ -41,26 +46,27 @@ export default function AlternativeHero() {
                         </motion.li>
                         <motion.li
                             initial={{ width: 'fit-content' }}
-                            whileHover={{ scale: 1.02, width: '100%', background: 'red', color: 'white' }}
+                            whileHover={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
+                            whileTap={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
                             transition={{ duration: 0.3 }} // Adjust duration for smoother effect
                             className="text-black  bg-white cursor-pointer"
                         >
                             CONTACT
                         </motion.li>
                     </ul>
-                </div>
+                </motion.div>
 
 
-                <div className="text-left   flex-1" id="Subtext">
-                    <p>Elevating Digital Excellence</p>
-                </div>
+                <motion.div animate={{ x: 0, }} initial={{ x: 100 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="text-left text-xl md:p-3 p-0 py-3 min-w-min" id="Subtext">
+                    <p className='font-medium '>Elevating Digital Excellence. <br></br> We make cool websites, even cooler</p>
+                </motion.div>
 
 
             </div>
 
-            <div className="absolute bottom-2 text-center  w-full font-extrabold" id="Subtext">
-                <p className="text-9xl text-center">KAMI</p>
-            </div>
+            <motion.div animate={{ y: 0, }} initial={{ y: 200 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="absolute bottom-2 text-center  w-full font-extrabold" id="Subtext">
+                <p className="md:text-8xl text-4xl kamiworks text-center text-custom-orange">KAMIWORKS  &copy;</p>
+            </motion.div>
         </div>
     )
 }
