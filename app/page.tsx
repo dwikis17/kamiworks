@@ -2,7 +2,9 @@
 import { useRef } from "react";
 import AlternativeHero from "./components/AlternativeHero";
 import { useScroll, useTransform, motion } from "framer-motion";
-
+import WorkSection from "./components/section/WorkSection";
+import qr from '@/public/qr.png'
+import Image from 'next/image'
 export default function Home() {
 
   const ref = useRef(null)
@@ -14,29 +16,18 @@ export default function Home() {
 
   const firstPage = useTransform(scrollYProgress, [0, 1], ['0%', '-150%'])
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between ">
+    <main className="flex min-h-screen w-screen flex-col items-center justify-between ">
+      <div className="absolute md:top-20 top-8 md:left-16  left-6 z-30">
+        <p>HOME</p>
+      </div>
+      <div className="fixed md:top-20 top-2 md:right-20 right-2  z-30 border p-3 bg-white rounded-3xl ">
+        <Image src={qr} alt='qr' className='w-[70px] aspect-square' />
+      </div>
       <motion.section className=" w-screen h-screen sticky top-0  z-0" style={{ y: firstPage }}>
         <AlternativeHero />
       </motion.section>
-      <section className=" w-screen md:p-12 p-0  bg-white z-10  ">
-        <section className="sticky md:top-12 top-0 h-[80vh] bg-red-500 flex justify-center items-center md:rounded-3xl relative">
-          <div>
-            <h1> Scroll</h1>
-          </div>
-        </section>
-        {/* Yellow section that scrolls over the black section */}
-        <section className="sticky md:top-12  top-0 h-[80vh] bg-indigo-500 flex justify-center items-center md:rounded-3xl">
-          <div>
-            <h1> Scroll</h1>
-          </div>
-        </section>
-
-        <section className="sticky md:top-12 top-0 h-[80vh] bg-slate-500 flex justify-center items-center md:rounded-3xl">
-          <div>
-            <h1> Scroll</h1>
-          </div>
-        </section>
-
+      <section className="w-screen  md:p-12 p-0  bg-white z-10 " id="works">
+        <WorkSection />
       </section>
 
 
