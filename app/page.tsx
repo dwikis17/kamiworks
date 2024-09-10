@@ -20,7 +20,7 @@ export default function Home() {
       <div className="absolute md:top-20 top-8 md:left-16  left-6 z-30">
         <p>HOME</p>
       </div>
-      <div className="fixed md:top-20 top-2 md:right-20 right-2  z-30 border p-3 bg-white rounded-3xl ">
+      <div className="fixed md:top-20 top-4 md:right-20 right-4  z-30 border p-3 bg-white rounded-3xl ">
         <Image src={qr} alt='qr' className='w-[70px] aspect-square' />
       </div>
       <motion.section className=" w-screen h-screen sticky top-0  z-0" style={{ y: firstPage }}>

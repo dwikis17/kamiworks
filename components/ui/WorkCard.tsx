@@ -1,6 +1,8 @@
-import mbp1 from '@/public/mbp1.png'
-import Image from 'next/image'
 
+import Image from 'next/image'
+import { motion, useAnimation, useInView } from 'framer-motion'
+import React, { useRef } from 'react'
+import AnimatedButton from '../button/AnimatedButton'
 export interface WorkCardProps {
     name: string
     image: any
@@ -10,29 +12,97 @@ export interface WorkCardProps {
 
 export default function WorkCard({ name, image, link, index }: WorkCardProps) {
     const color = (index + 10) % 2 === 0 ? 'bg-[#FF3C00]' : 'bg-black'
-    console.log()
+    const controls = useAnimation()
+    const ref = useRef(null)
+    const secondRef = useRef(null)
+    const isInView = useInView(ref, { once: true, amount: 0.6 },)
+    const secondIsInView = useInView(secondRef, { once: false, amount: 0.6 },)
+
+    React.useEffect(() => {
+        if (isInView) {
+            console.log(isInView, 'hehe')
+            controls.start('visible')
+        }
+    }, [controls, isInView, secondIsInView])
+
+    const containerVariants = {
+        hidden: { x: -100, opacity: 0 },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.1,
+                ease: 'easeOut',
+                when: 'beforeChildren',
+                staggerChildren: 0.2,
+            },
+        },
+    }
+
+    const secondContainerVariants = {
+        hidden: { x: 100, opacity: 0 },
+        visible: {
+            x: 0, opacity: 1, transition: {
+                duration: 0.5,
+                ease: 'easeOut',
+                when: 'beforeChildren',
+                staggerChildren: 0.2,
+            },
+        }
+    }
+
+    const itemVariants = {
+        hidden: { x: -20, opacity: 0 },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.3,
+                ease: 'easeOut',
+            },
+        },
+    }
     return (
-        <div className={`sticky md:top-12 top-0 h-[80vh] ${color} text-white flex lg:flex-row flex-col justify-center items-center  gap-6  md:rounded-3xl relative md:mb-3 px-24`}>
-
-
-            <div className="flex-1  items-center justify-center flex  flex-col p-3 relative">
-                <h1 className="text-6xl font-bold ">{name}</h1>
-                <button onClick={() => { window.open(link, '_blank'); }} className="
-px-6 py-3 rounded-md
-bg-gradient-to-r from-gray-700 to-gray-600
-text-gray-200 font-medium text-sm
-transition-all duration-300 ease-in-out
-hover:from-gray-600 hover:to-gray-500
-hover:text-white hover:shadow-md
-focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50
-absolute right-0
-">
-                    View Project
-                </button>
-            </div>
-            <div className="flex-1 ">
-                <Image alt='alt1' src={image} />
-            </div>
+        <div className={`sticky md:top-12 top-0 h-[90vh] ${color} text-white flex flex-col lg:flex-row justify-center items-center gap-6 md:rounded-3xl relative md:mb-3 px-6 md:px-12 py-6`}>
+            <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={containerVariants}
+                className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start space-y-6"
+            >
+                <motion.h1
+                    variants={itemVariants}
+                    className="text-4xl lg:text-6xl font-bold text-center lg:text-left"
+                >
+                    {name}
+                </motion.h1>
+                <motion.div
+                    variants={itemVariants}
+                    className='w-full flex justify-between items-center'
+                >
+                    <motion.div
+                        className="w-[30px] h-[30px] bg-white"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                    />
+                    <AnimatedButton link={link}>View Project</AnimatedButton>
+                </motion.div>
+            </motion.div>
+            <motion.div ref={secondRef}
+                initial="hidden"
+                animate={controls}
+                variants={secondContainerVariants} className="w-full lg:w-1/2 flex justify-center items-center ">
+                <div className="relative w-full aspect-video ">
+                    <Image
+                        alt={`Project image for ${name}`}
+                        src={image}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                    />
+                </div>
+            </motion.div>
         </div>
     )
 }

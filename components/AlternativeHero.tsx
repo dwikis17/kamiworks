@@ -4,9 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function AlternativeHero() {
     return (
-        <div className=" relative h-full w-screen  md:p-22  p-3   flex flex-col  ">
-
-
+        <div className=" relative h-full w-screen  md:p-24 p-3   flex flex-col  ">
             <div className="flex md:flex-row flex-col top-32 relative  md:p-6 p-3">
                 <motion.div animate={{ x: 0, }} initial={{ x: -100 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="sm:text-7xl text-5xl w-full overflow-hidden  " id="list">
                     <ul className="font-extrabold   flex flex-col sm:gap-y-2">
