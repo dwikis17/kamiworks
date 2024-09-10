@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function AlternativeHero() {
     return (
-        <div className=" relative h-full w-screen  md:p-24 p-3   flex flex-col  ">
+        <div className=" relative h-full w-screen  md:p-22  p-3   flex flex-col  ">
 
 
             <div className="flex md:flex-row flex-col top-32 relative  md:p-6 p-3">
@@ -57,7 +57,7 @@ export default function AlternativeHero() {
             </div>
 
             <motion.div animate={{ y: 0, }} initial={{ y: 200 }} transition={{ duration: 0.3, ease: 'easeInOut' }} className="absolute bottom-0  text-center left-0  w-full font-extrabold flex justify-center items-end" id="Subtext">
-                <p className="md:text-10xl sm:text-8xl text-4xl  text-center  text-custom-orange  relative md:top-20 top-12 sm:top-0 ">KAMIWORKS  &copy;</p>
+                <p className="text-3xl md:text-8xl lg:text-9xl  text-center  text-custom-orange  relative top-0  ">KAMIWORKS  &copy;</p>
             </motion.div>
         </div>
     )

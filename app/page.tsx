@@ -1,10 +1,10 @@
 'use client'
 import { useRef } from "react";
-import AlternativeHero from "./components/AlternativeHero";
 import { useScroll, useTransform, motion } from "framer-motion";
-import WorkSection from "./components/section/WorkSection";
+import WorkSection from "../components/section/WorkSection";
 import qr from '@/public/qr.png'
 import Image from 'next/image'
+import AlternativeHero from "@/components/AlternativeHero";
 export default function Home() {
 
   const ref = useRef(null)
