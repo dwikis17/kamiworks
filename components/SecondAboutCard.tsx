@@ -28,7 +28,7 @@ export default function SecondAboutCard() {
                         animate={{ scale: isInView ? 1 : 0.7 }}
                         transition={{ duration: 1 }}
                     >
-                        At KAMI, we're a team of creatives who specialize in minimalistic web design. Whether you're looking to enhance your company profile or craft the perfect e-invitation for your wedding, we're here to make it happen. From the beginning, our goal has been to bring a touch of elegance and simplicity to web design, development, UI/UX, and product design.</motion.h2>.                </div>
+                        At KAMI, we're a team of creatives who specialize in minimalistic web design. Whether you're looking to enhance your company profile, we're here to make it happen. From the beginning, our goal has been to bring a touch of elegance and simplicity to web design, development, UI/UX, and product design.</motion.h2>.                </div>
             </div>
         </motion.div>
     )
