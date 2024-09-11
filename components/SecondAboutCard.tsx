@@ -10,7 +10,6 @@ export default function SecondAboutCard() {
     console.log(isInView, 'ha')
     return (
         <motion.div
-
             className="h-[350px] text-white flex flex-col overflow-hidden lg:flex-row justify-center items-center gap-6 md:rounded-3xl relative md:mb-3 px-6 md:px-12 py-6"
         >
             <div className="flex sm:flex-row flex-col w-full h-full text-black">
@@ -29,8 +28,7 @@ export default function SecondAboutCard() {
                         animate={{ scale: isInView ? 1 : 0.7 }}
                         transition={{ duration: 1 }}
                     >
-                        At KAMI, our team of passionate creatives is committed to reshaping online experiences. From the start, we've united around a common goal: delivering excellence in web design, development, UI/UX, and product design.                    </motion.h2>
-                </div>
+                        At KAMI, we're a team of creatives who specialize in minimalistic web design. Whether you're looking to enhance your company profile or craft the perfect e-invitation for your wedding, we're here to make it happen. From the beginning, our goal has been to bring a touch of elegance and simplicity to web design, development, UI/UX, and product design.</motion.h2>.                </div>
             </div>
         </motion.div>
     )

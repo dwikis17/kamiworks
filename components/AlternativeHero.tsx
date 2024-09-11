@@ -29,7 +29,7 @@ export default function AlternativeHero() {
                         >
                             <a href='#profile'>PROFILE</a>
                         </motion.li>
-                        <motion.li
+                        {/* <motion.li
                             initial={{ width: 'fit-content' }}
                             whileHover={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
                             whileTap={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
@@ -37,16 +37,18 @@ export default function AlternativeHero() {
                             className="text-black  bg-[#FCF5E9] cursor-pointer"
                         >
                             SERVICES
-                        </motion.li>
-                        <motion.li
-                            initial={{ width: 'fit-content' }}
-                            whileHover={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
-                            whileTap={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
-                            transition={{ duration: 0.3 }} // Adjust duration for smoother effect
-                            className="text-black  bg-[#FCF5E9] cursor-pointer"
-                        >
-                            CONTACT
-                        </motion.li>
+                        </motion.li> */}
+                        <a href="https://wa.me/6281382854010" target="_blank" rel="noopener noreferrer">
+                            <motion.li
+                                initial={{ width: 'fit-content' }}
+                                whileHover={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
+                                whileTap={{ scale: 1.02, width: '100%', backgroundColor: '#FF3C00', color: 'white' }}
+                                transition={{ duration: 0.3 }} // Adjust duration for a smoother effect
+                                className="text-black bg-[#FCF5E9] cursor-pointer"
+                            >
+                                CONTACT
+                            </motion.li>
+                        </a>
                     </ul>
                 </motion.div>
 
