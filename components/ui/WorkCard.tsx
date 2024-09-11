@@ -63,13 +63,13 @@ export default function WorkCard({ name, image, link, index }: WorkCardProps) {
         },
     }
     return (
-        <div className={`sticky md:top-12 top-0 h-[90vh] ${color} text-white flex flex-col lg:flex-row justify-center items-center gap-6 md:rounded-3xl relative md:mb-3 px-6 md:px-12 py-6`}>
+        <div className={`sticky md:top-12  top-0 h-[90vh] ${color} text-white flex flex-col overflow-hidden lg:flex-row justify-center  items-center gap-6 md:rounded-3xl relative md:mb-3 px-6 md:px-12 py-6`}>
             <motion.div
                 ref={ref}
                 initial="hidden"
                 animate={controls}
                 variants={containerVariants}
-                className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start space-y-6"
+                className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start space-y-6 "
             >
                 <motion.h1
                     variants={itemVariants}
@@ -82,7 +82,7 @@ export default function WorkCard({ name, image, link, index }: WorkCardProps) {
                     className='w-full flex justify-between items-center'
                 >
                     <motion.div
-                        className="w-[30px] h-[30px] bg-white"
+                        className="w-[30px] h-[30px] bg-[#FCF5E9]"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
                     />
@@ -97,9 +97,7 @@ export default function WorkCard({ name, image, link, index }: WorkCardProps) {
                     <Image
                         alt={`Project image for ${name}`}
                         src={image}
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-lg"
+
                     />
                 </div>
             </motion.div>

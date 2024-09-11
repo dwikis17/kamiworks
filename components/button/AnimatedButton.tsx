@@ -38,13 +38,13 @@ export default function AnimatedButton({ link, children }: { link: string, child
             onTap={handleDeactivate}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative w-40 h-12  text-primary-foreground rounded-md overflow-hidden"
+            className="relative w-40 h-12  rounded-md overflow-hidden bg-[#FCF5E9] rounded-xl"
         >
             <motion.div
                 initial={{ opacity: 1 }}
                 animate={{ opacity: isActive ? 0 : 1 }}
                 transition={{ duration: 0.2 }}
-                className="absolute inset-0 flex items-center justify-center"
+                className="absolute inset-0 flex items-center text-black justify-center"
             >
                 {children}
             </motion.div>
@@ -54,7 +54,7 @@ export default function AnimatedButton({ link, children }: { link: string, child
                 animate={controls}
                 className="absolute inset-0 flex items-center justify-center"
             >
-                <ArrowRight className="w-6 h-6" />
+                <ArrowRight className="w-6 h-6 text-black" />
             </motion.div>
         </motion.button>
     )

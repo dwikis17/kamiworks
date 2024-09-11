@@ -30,6 +30,18 @@ body {
   line-height: 1.2em;
 }
 
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #FF3C00;
+  transform-origin: 0%;
+  z-index: 50;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -58,6 +70,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -90,6 +103,7 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
